@@ -18,5 +18,10 @@ namespace TemplateMantenimiento
         {
             Response.Redirect("Actividades.aspx");
         }
+
+        protected void btnEntradas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Solicitud de Modificación.aspx");
+        }
     }
 }

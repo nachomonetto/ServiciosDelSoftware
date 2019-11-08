@@ -66,16 +66,16 @@
         <div class="well">
       
       <div class="form-group">
-          <label for="usr">Nombre del programa a modificar e información general</label>
+          <label for="usr">Nombre del programa a modificar</label>
           
-        <textarea class="form-control" rows="3"></textarea>
+        <textarea class="form-control" rows="3" id="txtNombrePrograma" runat="server" required></textarea>
       </div>
             </div>
       <hr />
         <div class="well">
             <div class="form-group">
                 <label for="usr">Ruta absoluta del archivo a modificar:</label>
-                <input type="text" class="form-control" id="rutaAbsoluta">
+                <input type="text" runat="server" class="form-control" id="txtRutaAbsoluta" required>
             </div>
         </div>
         <hr />
@@ -83,7 +83,7 @@
             <div class="form-group">
                 <label for="usr">Tamaño del programa fuente en líneas de código (LCD):</label>
       
-        <input type="text" class="form-control" id="tamañoFuente" onKeyPress="return soloNumeros(event)">
+        <input type="text" runat="server" class="form-control" id="txtLineasDeCodigo" required onKeyPress="return soloNumeros(event)">
             </div>
             </div>
       <hr />
@@ -91,7 +91,7 @@
             <div class="form-group">
                 <label for="usr">Tamaño del ejecutable en Kb:</label>
       
-                <input type="text" class="form-control" id="tamañoEjecutable" onKeyPress="return soloNumeros(event)">
+                <input type="text" runat="server" class="form-control" id="txtTamañoEjecutable" required onKeyPress="return soloNumeros(event)">
                 </div>
             </div>
       <hr />
@@ -99,7 +99,8 @@
             <div class="form-group">
                 <label for="usr">Lenguaje de programación:</label>
             
-            <input type="text" class="form-control" id="usr">
+            <input type="text" runat="server" class="form-control" id="txtLenguajeProgramacion" required>
+            <%--<asp:TextBox ID="txtLenguajeProgramacion" CssClass="form-control" runat="server" required></asp:TextBox>--%>
             </div>
         </div>
       
@@ -107,7 +108,7 @@
         <div class="well">
             <div class="form-group">
                 <label for="usr">Fecha de instalación del programa:</label>
-                <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                <asp:Calendar ID="calendarFechaInstalacion" runat="server" ></asp:Calendar>
             </div>
         </div>
       
@@ -115,7 +116,7 @@
         <div class="well">
             <div class="form-group">
                 <label for="usr">Número de ejecuciones del programa desde la instalación:</label>
-                    <input type="text" class="form-control" id="ejecuciones" onKeyPress="return soloNumeros(event)">
+                    <input type="text" runat="server" class="form-control" id="txtEjecuciones" required onKeyPress="return soloNumeros(event)">
             </div>
         </div>
       
@@ -123,7 +124,7 @@
         <div class="well">
             <div class="form-group">
                 <label for="usr">Número de fallos:</label>
-                    <input type="text" class="form-control" id="fallos" onKeyPress="return soloNumeros(event)">
+                    <input type="text" runat="server" class="form-control" id="txtFallos" required onKeyPress="return soloNumeros(event)">
             </div>
         </div>
       
@@ -131,7 +132,7 @@
         <div class="well">
             <div class="form-group">
                 <label for="usr">Número de sentencias a añadir, modificar o eliminar en el cambio:</label>
-                    <input type="text" class="form-control" id="sentencias" onKeyPress="return soloNumeros(event)">
+                    <input type="text" runat="server" class="form-control" id="txtSentencias" required onKeyPress="return soloNumeros(event)">
             </div>
         </div>    
       <hr />
@@ -140,31 +141,31 @@
                 <label for="usr">Identifiación de la persona que solicitó el cambio:</label>
                     <div class="input-group">
                     <span class="input-group-addon">Nombre</span>
-                    <input id="nombreSolicitante" type="text" class="form-control" name="msg">
+                    <input id="txtNombreSolicitante" type="text" runat="server" class="form-control" name="msg" required>
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">Apellido</span>
-                    <input id="ApellidoSolicitante" type="text" class="form-control" name="msg">
+                    <input id="txtApellidoSolicitante" type="text" runat="server" class="form-control" name="msg" required>
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">Área de la Empresa</span>
-                    <input id="areaSolicitante" type="text" class="form-control" name="msg">
+                    <input id="txtAreaSolicitante" type="text" runat="server" class="form-control" name="msg" required>
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">E-Mail</span>
-                    <input id="mailSolicitante" type="text" class="form-control" name="msg">
+                    <input id="txtMailSolicitante" type="text" runat="server" class="form-control" name="msg" required>
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">Celular</span>
-                    <input id="celularSolicitante" type="text" class="form-control" name="msg">
+                    <input id="txtCelularSolicitante" type="text" runat="server" class="form-control" name="msg" required>
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">Nombre del Superior</span>
-                    <input id="nombreSuperior" type="text" class="form-control" name="msg">
+                    <input id="txtNombreSuperior" type="text" runat="server" class="form-control" name="msg" required>
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">Apellido del Superior</span>
-                    <input id="apellidoSuperior" type="text" class="form-control" name="msg">
+                    <input id="txtApellidoSuperior" type="text" runat="server" class="form-control" name="msg" required>
                 </div>
             </div>
         </div>
@@ -174,16 +175,20 @@
             <div class="form-group">
                 <label for="usr">Tipo de mantenimiento:</label><br />
                     <label class="radio-inline">
-                    <input type="radio" name="optradio">Correctiva
+                    <%--<input type="radio" id="rbCorrectiva" runat="server" name="optradio">Correctiva--%>
+                    <asp:RadioButton ID="rbCorrectiva" GroupName="tipoMantenimiento" Text="Correctivo" runat="server" />
                     </label>
                     <label class="radio-inline">
-                    <input type="radio" name="optradio">Preventiva
+                    <%--<input type="radio" id="rbPreventiva" runat="server" name="optradio">Preventiva--%>
+                    <asp:RadioButton ID="rbPreventiva" GroupName="tipoMantenimiento" Text="Preventivo" runat="server" />
                     </label>
                     <label class="radio-inline">
-                    <input type="radio" name="optradio">Adaptativa
+                    <%--<input type="radio" id="rbAdaptativa" runat="server" name="optradio">Adaptativa--%>
+                    <asp:RadioButton ID="rbAdaptativa" GroupName="tipoMantenimiento" Text="Adaptativo" runat="server" />
                     </label>
                     <label class="radio-inline">
-                    <input type="radio" name="optradio">Mejora
+                    <%--<input type="radio" id="rbMejora" runat="server" name="optradio">Mejora--%>
+                    <asp:RadioButton ID="rbMejora" GroupName="tipoMantenimiento" Text="Mejora" runat="server" />
                     </label>
             </div>
         </div>
@@ -195,22 +200,22 @@
                 <br />
                 <br />
                 Fecha Inicio
-                <asp:Calendar ID="Calendar2" runat="server"></asp:Calendar>
+                <asp:Calendar ID="calendarFechaInicio" runat="server"></asp:Calendar>
                 <br />
                 Fecha Fin
-                <asp:Calendar ID="Calendar3" runat="server"></asp:Calendar>
+                <asp:Calendar ID="calendarFechaFin" runat="server"></asp:Calendar>
             </div>
         </div>
         <hr />
       <div class="well">
           <div class="form-group">
               <label for="usr">Beneficios netos que sopone el cambio:</label>
-              <textarea class="form-control" rows="3"></textarea>
+              <textarea id="txtBeneficios" class="form-control" runat="server" rows="3" required></textarea>
           </div>
       </div>
       <br />
-      <button type="button" class="btn btn-success btn-lg btn-block">Enviar ></button>
-      
+
+      <asp:Button ID="btnEnviar" runat="server" Text="Enviar" class="btn btn-success btn-lg btn-block" OnClick="btnEnviar_Click" />
     </div>
 
   </div>
