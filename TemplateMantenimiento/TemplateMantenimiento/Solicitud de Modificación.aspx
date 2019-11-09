@@ -66,7 +66,7 @@
         <div class="well">
       
       <div class="form-group">
-          <label for="usr">Nombre del programa a modificar</label>
+          <label for="usr">Nombre del programa a modificar:</label>
           
         <textarea class="form-control" rows="3" id="txtNombrePrograma" runat="server" required></textarea>
       </div>

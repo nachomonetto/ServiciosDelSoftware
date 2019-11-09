@@ -78,10 +78,10 @@
       <hr>
       <%--<button type="button" class="btn btn-primary btn-lg btn-block">Informe del problema y solicitud de modificación (MR/PR)</button>--%>
       <asp:Button ID="btnEntradas" class="btn btn-primary btn-lg btn-block" runat="server" Text="Informe del problema y solicitud de modificación (MR/PR)" OnClick="btnEntradas_Click" />
-      <h4>En caso que en el detalle el usuario no especifique la causa que provocó la necesidad de una modificación, intente reproducirlo. Además, detalle que condiciones hace que se vea afectado el software:</h4>
+     <%-- <h4>En caso que en el detalle el usuario no especifique la causa que provocó la necesidad de una modificación, intente reproducirlo. Además, detalle que condiciones hace que se vea afectado el software:</h4>
         <div class="form-group">
           <textarea class="form-control" rows="3"></textarea>
-        </div>
+        </div>--%>
         <hr />
         <button type="button" class="btn btn-primary btn-lg btn-block">Línea base</button>
         <hr />
@@ -103,7 +103,7 @@
             </div>
   </div>
         <hr />
-        <asp:Button ID="btnActividades" CssClass="btn btn-success btn-lg btn-block" runat="server" Text="Pasar a actividades >" OnClick="btnActividades_Click" />
+        <asp:Button ID="btnActividades" CssClass="btn btn-success btn-lg btn-block" runat="server" Text="Pasar a tareas >" OnClick="btnActividades_Click" />
       
     </div>
   </div>

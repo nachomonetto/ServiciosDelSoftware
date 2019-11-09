@@ -33,5 +33,20 @@ namespace TemplateMantenimiento
             lblBeneficios.Text = (string)Session["beneficios"];
 
         }
+
+        protected void rbSiAfectacion_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rbSiPersonal_CheckedChanged(object sender, EventArgs e)
+        {
+            divAuto.Visible = true;
+        }
+
+        protected void rbNoPersonal_CheckedChanged(object sender, EventArgs e)
+        {
+            divAuto.Visible = false;
+        }
     }
 }

@@ -146,7 +146,7 @@
                             <asp:Label ID="lblBeneficios" runat="server" Text="Label"></asp:Label>
 
                         </div>
-                        <h1 style="text-align: center">Actividades</h1>
+                        <h1 style="text-align: center">Tareas</h1>
                         <br />
                         <h4>Antes de modificar el sistema, usted debería analizar la MR/PR para determinar su impacto en la organización, en el sistema existente y en los sistemas conectados con él; desarrollar y documentar las posibles soluciones recomendadas, así como obtener la aprobación para implementar la solución deseada. A continuación, se describen las tareas específicas a realizar en esta etapa.</h4>
                         <hr />
@@ -220,14 +220,14 @@
                                 <h4><strong>¿Se cuenta con personal adecuado para implementar el cambio?</strong></h4>
                                 <label class="radio-inline">
                                     <%--  <input type="radio" name="optradio">Si--%>
-                                    <asp:RadioButton ID="rbSiPersonal" type="radio" Text="Si" GroupName="Personal" runat="server" />
+                                    <asp:RadioButton ID="rbSiPersonal" AutoPostBack="true" type="radio" Text="Si" GroupName="Personal" runat="server" OnCheckedChanged="rbSiPersonal_CheckedChanged" />
                                 </label>
                                 <label class="radio-inline">
                                     <%--<input type="radio" name="optradio">No--%>
-                                    <asp:RadioButton ID="rbNoPersonal" type="radio" Text="No" GroupName="Personal" runat="server" />
+                                    <asp:RadioButton ID="rbNoPersonal" AutoPostBack="true" type="radio" Text="No" GroupName="Personal" runat="server" OnCheckedChanged="rbNoPersonal_CheckedChanged" />
                                 </label>
-
-                                <h4>En el caso que la respuesta sea “Si”, <strong>complete los datos de contacto del responsable:</strong></h4>
+                                <div class="auto" id="divAuto" runat="server" visible="false">
+                                <h4><strong>Complete los datos de contacto del responsable:</strong></h4>
                                 <div class="input-group">
                                     <span class="input-group-addon">Nombre</span>
                                     <input id="txtNombreResponsable" runat="server" type="text" class="form-control" name="msg">
@@ -248,6 +248,7 @@
                                     <span class="input-group-addon">Celular</span>
                                     <input id="txtCelular" runat="server" type="text" class="form-control" name="msg">
                                 </div>
+                                    </div>
                                 <h4><strong>¿Tenemos el dinero para llevar a cabo el cambio?</strong></h4>
                                 <label class="radio-inline">
 
@@ -260,15 +261,26 @@
                                 <h4><strong>¿El cambio afectaría a otros proyectos?</strong></h4>
                                 <label class="radio-inline">
 
-                                    <asp:RadioButton ID="rbSiAfectacion" type="radio" Text="Si" GroupName="Afectacion" runat="server" />
+                                    <asp:RadioButton ID="rbSiAfectacion" type="radio" Text="Si" GroupName="Afectacion" runat="server" AutoPostBack="true" OnCheckedChanged="rbSiAfectacion_CheckedChanged" />
                                 </label>
                                 <label class="radio-inline">
 
-                                    <asp:RadioButton ID="rbNoAfectacion" type="radio" Text="No" GroupName="Afectacion" runat="server" />
+                                    <asp:RadioButton ID="rbNoAfectacion" type="radio" Text="No" GroupName="Afectacion" runat="server" AutoPostBack="true" />
                                 </label>
-                                <h4>En el caso que la respuesta sea “Si”, <strong>Detalle el nombre de los proyectos afectados y si se les quitarían recursos para realizar el cambio</strong></h4>
+                                <h4><strong>Detalle el nombre de los proyectos afectados y si se les quitarían recursos para realizar el cambio</strong></h4>
+                                <div id="divAfectacion" visible="false">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                           <%-- ACA ME QUEDEEEEEEEE--%>
 
-                                <textarea class="form-control" id="txtProyectos" runat="server" rows="3"></textarea>
+                                        </div>
+                                        <div class="col-sm-6">
+
+                                        </div>
+                                    </div>
+                                    <textarea class="form-control" id="txtProyectos" runat="server" rows="3"></textarea>
+                                </div>
+                                
 
                                 <h4><strong>En cuanto a la seguridad, ¿El cambio podría dejar vulnerable al sistema?</strong></h4>
                                 <label class="radio-inline">
