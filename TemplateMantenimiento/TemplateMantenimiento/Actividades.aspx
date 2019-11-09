@@ -13,6 +13,7 @@
     <script src="scripts/jquery-1.9.1.min.js"></script>
     <%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>--%>
     <script src="scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
         .row.content {
@@ -56,6 +57,8 @@
             var key = window.Event ? e.which : e.keyCode
             return (key >= 48 && key <= 57)
         }
+
+       
 
     </script>
 
@@ -344,98 +347,275 @@
                                 </label>
                                 <h4><strong>Defina los requerimientos más sólidos de la modificación y los riesgos asociados a cada uno de ellos si no se llegaran a realizar.</strong></h4>
                                 <textarea id="txtReqSolidos" class="form-control" runat="server" rows="3"></textarea>
-                                <h4><strong>Estimar tamaño y magnitud de la modificación prevista: </strong></h4>
-                                <textarea id="txtTamañoYMagnitud" class="form-control" runat="server" rows="3"></textarea>
-                                <h4><strong>Desarrolle al menos 3 opciones para implementar la modificación, definiendo el impacto en Hw y Usuarios, y los riesgos asociados a las opciones</strong></h4>
+                                <h4><strong>Estimar tamaño de la modificación prevista. Para ello, agregue los Casos de Uso afectados por la modificación y la complejidad de cada uno en base a la siguiente tabla:</strong></h4>
+                                <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Número de transacciones del CU</th>
+                                        <th>Tipo</th>
+                                        
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                    <tr>
+                                        <td>Menor o igual que 3</td>
+                                        <td>Simple</td>
+                                        
+                                   </tr>
+                                   <tr>
+                                        <td>Mayor o igual que 4 y menor que 7</td>
+                                        <td>Medio</td>
+                                        
+                                   </tr>
+                                   <tr>
+                                        <td>Mayor o igual que 7</td>
+                                        <td>Complejo</td>
+                                        
+                                   </tr>
+                               </tbody>
+                               </table>
+                                <br />
+                                <%--<div id="myDiv">
+                                     <input type="text" class="form-control" id="txtCU" placeholder="Nombre del CU...">
+                                     <input type="text" class="form-control" id="txtComplejidad" placeholder="Complejidad...">
+                                     <br />
+
+                                </div>--%>
+                                <div class="row">
+                                    <div class="well">
+                                        <div class="col-sm-6" id="divCU">
+                                        <input type="text" class="form-control" id="txtCU" placeholder="Nombre del CU..."><br />
+                                    </div>
+                                    <div class="col-sm-6" id="divComplejidad">
+                                        <input type="text" class="form-control" id="txtComplejidad" placeholder="Complejidad..."><br />
+                                    </div>
+                                        <button type="button" onclick="myFunction()" class="btn btn-primary btn-lg btn-block">Agregar CU</button>
+                                </div>
+                                <br />
+                                
+                                    </div>
+                                    
+                               
+                                <script>
+                                    function myFunction() {
+                                        var node1 = document.createElement("div");
+                                        var node2 = document.createElement("div");
+
+                                        var txtCU = document.createElement("INPUT");
+                                        txtCU.setAttribute("type", "text");
+                                        txtCU.setAttribute("placeholder", "Nombre del CU...");
+                                        txtCU.setAttribute("class", "form-control");
+
+                                        var txtComplejidad = document.createElement("INPUT");
+                                        txtComplejidad.setAttribute("type", "text");
+                                        txtComplejidad.setAttribute("placeholder", "Complejidad...");
+                                        txtComplejidad.setAttribute("class", "form-control");
+
+                                        var br1 = document.createElement("BR");
+                                        var br2 = document.createElement("BR");
+
+                                        node1.appendChild(txtCU);
+                                        node1.appendChild(br1);
+                                        node2.appendChild(txtComplejidad);
+                                        node2.appendChild(br2);
+                                        document.getElementById("divCU").appendChild(node1);
+                                        document.getElementById("divComplejidad").appendChild(node2);
+                                    }
+
+                                    function funcionOpciones() {
+                                        
+                                        var node1 = document.createElement("div");
+                                        var node2 = document.createElement("div");
+                                        var node3 = document.createElement("div");
+                                        var node4 = document.createElement("div");
+
+                                        
+
+                                        var txtOpcion = document.createElement("textarea");
+                                        txtOpcion.setAttribute("type", "text");                                     
+                                        txtOpcion.setAttribute("class", "form-control");
+
+                                        
+
+                                        var txtImpacto = document.createElement("textarea");
+                                        txtImpacto.setAttribute("type", "text");
+                                        txtImpacto.setAttribute("class", "form-control");
+
+                                       
+
+                                        var txtRiesgos = document.createElement("textarea");
+                                        txtRiesgos.setAttribute("type", "text");
+                                        txtRiesgos.setAttribute("class", "form-control");
+
+                                      
+
+                                        var rbOpcion = document.createElement("input");
+                                        
+                                        rbOpcion.setAttribute("name", "optradio");
+                                        rbOpcion.setAttribute("type", "radio");
+
+                                        var br1 = document.createElement("br");
+                                        var br2 = document.createElement("br");
+                                        var br3 = document.createElement("br");
+
+                                        var br4 = document.createElement("br");
+                                        var br5 = document.createElement("br");
+                                        var br6 = document.createElement("br");
+                                        var br7 = document.createElement("br");
+                                        var br8 = document.createElement("br");
+                                        
+                                        node1.appendChild(txtOpcion);
+                                        node1.appendChild(br1);
+                                        
+                                        node2.appendChild(txtImpacto);
+                                        node2.appendChild(br2);
+                                        
+                                        node3.appendChild(txtRiesgos);
+                                        node3.appendChild(br3);
+                                        
+                                        node4.appendChild(rbOpcion);
+                                        node4.appendChild(br4);
+                                        node4.appendChild(br5);
+                                        node4.appendChild(br6);
+                                        node4.appendChild(br7);
+                                        node4.appendChild(br8);
+
+                                        document.getElementById("divOpcion").appendChild(node1);
+                                        document.getElementById("divImpacto").appendChild(node2);
+                                        document.getElementById("divRiesgos").appendChild(node3);
+                                        document.getElementById("divAceptar").appendChild(node4);
+                                    }
+                                    function funcionEstadoPendiente() {
+                                        document.querySelector('lblEstado').innerText = '';
+                                        document.querySelector('lblEstado').innerText = 'Estado: Pendiente';
+
+                                        
+                                       
+                                    }
+                                    function funcionEstadoEnProceso() {
+                                        document.querySelector('lblEstado').innerText = '';
+                                        document.querySelector('lblEstado').innerText = 'Estado: En Proceso';
+
+                                    }
+                                    function funcionEstadoAceptada() {
+                                        document.querySelector('lblEstado').innerText = '';
+                                        document.querySelector('lblEstado').innerText = 'Estado: Aceptada';
+
+                                    }
+                                    function funcionEstadoRechazada() {
+                                        document.querySelector('lblEstado').innerText = '';
+                                        document.querySelector('lblEstado').innerText = 'Estado: Rechazada';
+
+                                    }
+                                </script>
+
+                                <%--<textarea id="txtTamañoYMagnitud" class="form-control" runat="server" rows="3"></textarea>--%>
+                                <h4><strong>Desarrolle las opciones para implementar la modificación, definiendo el impacto en Hw y Usuarios, y los riesgos asociados a las opciones</strong></h4>
                                 <div class="well">
                                 <div class="row">
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                        <label for="usr">Opción 1</label>
+                                    <div class="col-sm-3">
+                                        <div class="form-group" id="divOpcion">
+                                        <label for="usr">Opción</label>
                                         <textarea id="txtOpcion" class="form-control" runat="server"></textarea>
+                                        <br />
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
+                                    <div class="col-sm-3">
+                                        <div class="form-group" id="divImpacto">
                                         <label for="usr">Impacto en Hw y Usuarios</label>
                                         <textarea id="Textarea1" class="form-control" runat="server"></textarea>
+                                        <br />
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
+                                    <div class="col-sm-3">
+                                        <div class="form-group" id="divRiesgos">
                                         <label for="usr">Riesgos</label>
                                         <textarea id="Textarea6" class="form-control" runat="server"></textarea>
+                                        <br />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group" id="divAceptar">
+                                        <label for="usr">Opción a aceptar</label><br />
+                                        <input type="radio" name="optradio">
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+
                                         </div>
                                     </div>
                                 </div>
-                                <hr />
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                        <label for="usr">Opción 2</label>
-                                        <textarea id="Textarea2" class="form-control" runat="server"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                        <label for="usr">Impacto en Hw y Usuarios</label>
-                                        <textarea id="Textarea3" class="form-control" runat="server"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                        <label for="usr">Riesgos</label>
-                                        <textarea id="Textarea7" class="form-control" runat="server"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr />
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                        <label for="usr">Opción 3</label>
-                                        <textarea id="Textarea4" class="form-control" runat="server"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                        <label for="usr">Impacto en Hw y Usuarios</label>
-                                        <textarea id="Textarea5" class="form-control" runat="server"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                        <label for="usr">Riesgos</label>
-                                        <textarea id="Textarea8" class="form-control" runat="server"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
+                                <button type="button" onclick="funcionOpciones()" class="btn btn-primary btn-lg btn-block">Agregar Opción</button>                        
                                 
                                 </div>
-                                <h4><strong>Determine la opción a aceptar: </strong></h4>
-                                
-                                <label class="radio-inline">
-
-                                    <asp:RadioButton ID="RadioButton1" type="radio" Text="Opción 1" GroupName="Opciones" runat="server" />
-                                </label>
-                                <label class="radio-inline">
-
-                                    <asp:RadioButton ID="RadioButton2" type="radio" Text="Opción 2" GroupName="Opciones" runat="server" />
-                                </label>
-                                <label class="radio-inline">
-
-                                    <asp:RadioButton ID="RadioButton3" type="radio" Text="Opción 3" GroupName="Opciones" runat="server" />
-                                </label>
+                   
                                 <h4><strong>Desarrolle un plan para implementar la modificación:</strong></h4>
                                 <textarea id="Textarea9" class="form-control" runat="server"></textarea>
                         </div>
                     </div>
                         <h3>Documentación</h3>
                         <hr />
+                        <div class="form-group">
+                            <div class="well">
+                                <h4><strong>Verifique, a través del siguiente botón, que los análisis aporpiados y la documentación del proyecto están actualizados:</strong></h4>
+                                <button type="button" class="btn btn-success btn-lg btn-block">Verificar</button>
+                                <h4>¿No existe documentación al respecto? Desarrolle la documentación correspondiente</h4>
+                                <button type="button" class="btn btn-success btn-lg btn-block">Generar documentación</button>
+
+                            </div>
+                            <div class="well">
+                                <h4><strong>Revise la estrategia de pruebas propuesta y planificación para intentar obtener una exactitud mayor.</strong></h4>
+                                <button type="button" class="btn btn-primary btn-lg btn-block">Revisar estrategia de pruebas</button>
+                                <button type="button" class="btn btn-primary btn-lg btn-block">Revisar calendario</button>
+
+                            </div>
+                            <div class="well">
+                                <h4><strong>Revise la estimación de recursos para una mayor precisión</strong></h4>
+                                <button type="button" class="btn btn-primary btn-lg btn-block">Revisar estimación de recursos</button>
+
+                            </div>
+                            <div class="well">
+                                <h4><strong>Actualice el estado de la Base de Datos</strong></h4>
+                                <button type="button" class="btn btn-primary btn-lg btn-block">Actualizar BD</button>
+                            </div>
+                            <div class="well">
+                                <h4><strong>Incluir una Recomendación para indicar si la MR/PR debería aprobarse o no. Al documentar el informe se deben dar a los directores de proyecto la recomendación personal sobre la MR/PR, lo que les permitirá tener una segunda opinión a la hora de decidir</strong></h4>
+                                <textarea id="Textarea2" class="form-control" runat="server"></textarea>
+                            </div>
+
+                        </div>
+                        <h3>Aprobación</h3>
+                        <hr />
+                        <div class="well">
+                            <h4><strong>Presentar los resultados del análisis para su aprobación por parte de los grupos de administración</strong></h4>
+                        <button class="w3-button w3-block w3-teal">Enviar resultados</button>
+                        </div>
+                        <div class="well">
+                            <h4><strong>Una vez aprobada la modificación actualizar el estado de la petición de modificación</strong></h4>
+                            <div class="form-group">
+                           <label for="sel1">Actualizar: </label>
+                            <select class="form-control" id="sel1">
+                                <option>Pendiente</option>
+                                <option selected>En proceso</option>
+                                <option>Aceptada</option>
+                                <option>Rechazada</option>
+                            </select>
+                            </div>
+                            
+                       </div>
+                        <div class="well">
+                            <h4><strong>Una vez aprobada, actualizar también los requerimientos (en caso de que la petición sea una mejora)</strong></h4>
+                            <button class="w3-button w3-block w3-black">Actualizar requerimientos</button>
+                        </div>
+                        
+
+
                 </div>
             </div>
 
-
+                </div>
         </div>
     </form>
 </body>
