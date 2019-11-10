@@ -36,17 +36,38 @@ namespace TemplateMantenimiento
 
         protected void rbSiAfectacion_CheckedChanged(object sender, EventArgs e)
         {
+            
 
         }
 
         protected void rbSiPersonal_CheckedChanged(object sender, EventArgs e)
         {
             divAuto.Visible = true;
+            rbSiDinero.Focus();
         }
 
         protected void rbNoPersonal_CheckedChanged(object sender, EventArgs e)
         {
             divAuto.Visible = false;
+            rbSiDinero.Focus();
+        }
+
+        protected void rbNoAfectacion_CheckedChanged(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        protected void rbSiSeguridad_CheckedChanged(object sender, EventArgs e)
+        {
+            divSeguridad.Visible = true;
+            txtBeneficiosALargoPlazo.Focus();
+        }
+
+        protected void RbNoSeguridad_CheckedChanged(object sender, EventArgs e)
+        {
+            divSeguridad.Visible = false;
+            txtBeneficiosALargoPlazo.Focus();
         }
     }
 }

@@ -258,43 +258,47 @@
 
                                     <asp:RadioButton ID="rbNoDinero" type="radio" Text="No" GroupName="Dinero" runat="server" />
                                 </label>
-                                <h4><strong>¿El cambio afectaría a otros proyectos?</strong></h4>
+                               <%-- <h4><strong>¿El cambio afectaría a otros proyectos?</strong></h4>
                                 <label class="radio-inline">
 
                                     <asp:RadioButton ID="rbSiAfectacion" type="radio" Text="Si" GroupName="Afectacion" runat="server" AutoPostBack="true" OnCheckedChanged="rbSiAfectacion_CheckedChanged" />
                                 </label>
                                 <label class="radio-inline">
 
-                                    <asp:RadioButton ID="rbNoAfectacion" type="radio" Text="No" GroupName="Afectacion" runat="server" AutoPostBack="true" />
-                                </label>
+                                    <asp:RadioButton ID="rbNoAfectacion" type="radio" Text="No" GroupName="Afectacion" runat="server" AutoPostBack="true" OnCheckedChanged="rbNoAfectacion_CheckedChanged" />
+                                </label>--%>
                                 <h4><strong>Detalle el nombre de los proyectos afectados y si se les quitarían recursos para realizar el cambio</strong></h4>
-                                <div id="divAfectacion" visible="false">
+                                <div id="divAfectacion">
                                     <div class="row">
-                                        <div class="col-sm-6">
-                                           <%-- ACA ME QUEDEEEEEEEE--%>
+                                        <div class="col-sm-6" id="divProyectos">
+
+                                           <input type="text" class="form-control" id="txtProyecto" runat="server" placeholder="Nombre del proyecto..."><br />
 
                                         </div>
-                                        <div class="col-sm-6">
-
+                                        <div class="col-sm-6" id="divRecursos">
+                                            <input type="text" class="form-control" id="txtRecursos" placeholder="Recursos a sacrificar..."><br />
                                         </div>
                                     </div>
-                                    <textarea class="form-control" id="txtProyectos" runat="server" rows="3"></textarea>
+                                    <button type="button" onclick="funcionAfectacion()" class="btn btn-primary btn-lg btn-block">Agregar proyecto</button>
                                 </div>
-                                
+                                   
 
                                 <h4><strong>En cuanto a la seguridad, ¿El cambio podría dejar vulnerable al sistema?</strong></h4>
                                 <label class="radio-inline">
 
-                                    <asp:RadioButton ID="rbSiSeguridad" type="radio" Text="Si" GroupName="Seguridad" runat="server" />
+                                    <asp:RadioButton ID="rbSiSeguridad" AutoPostBack="true" type="radio" Text="Si" GroupName="Seguridad" runat="server" OnCheckedChanged="rbSiSeguridad_CheckedChanged" />
                                 </label>
                                 <label class="radio-inline">
 
-                                    <asp:RadioButton ID="RbNoSeguridad" type="radio" Text="No" GroupName="Seguridad" runat="server" />
+                                    <asp:RadioButton ID="RbNoSeguridad" AutoPostBack="true" type="radio" Text="No" GroupName="Seguridad" runat="server" OnCheckedChanged="RbNoSeguridad_CheckedChanged" />
                                 </label>
-                                <h4>En el caso que la respuesta sea “Si”, <strong>Detalle implicaciones en la seguridad física y lógica</strong></h4>
+                                <div id="divSeguridad" visible="false" runat="server">
+                                    <h4><strong>Detalle implicaciones en la seguridad física y lógica</strong></h4>
                                 <div class="form-group">
                                     <textarea class="form-control" id="txtSeguridad" runat="server" rows="3"></textarea>
                                 </div>
+                                </div>
+                                
                                 <h4><strong>Detalle el beneficio que genera realizar la modificación. No siempre se tiene en cuenta la rentabilidad, el no corregir errores debido a altos costes puede afectar nuestra imagen</strong></h4>
                                 <textarea class="form-control" id="txtBeneficiosALargoPlazo" runat="server" rows="3"></textarea>
                                 <h4><strong>Seleccione el nivel de Testing requerido:</strong></h4>
@@ -433,7 +437,30 @@
                                         document.getElementById("divCU").appendChild(node1);
                                         document.getElementById("divComplejidad").appendChild(node2);
                                     }
+                                    function funcionAfectacion(){
+                                        var node1 = document.createElement("div");
+                                        var node2 = document.createElement("div");
 
+                                        var txtProyecto = document.createElement("INPUT");
+                                        txtProyecto.setAttribute("type", "text");
+                                        txtProyecto.setAttribute("placeholder", "Nombre del proyecto...");
+                                        txtProyecto.setAttribute("class", "form-control");
+
+                                        var txtRecursos = document.createElement("INPUT");
+                                        txtRecursos.setAttribute("type", "text");
+                                        txtRecursos.setAttribute("placeholder", "Recursos a sacrificar...");
+                                        txtRecursos.setAttribute("class", "form-control");
+
+                                        var br1 = document.createElement("br");
+                                        var br2 = document.createElement("br");
+
+                                        node1.appendChild(txtProyecto);
+                                        node1.appendChild(br1);
+                                        node2.appendChild(txtRecursos);
+                                        node2.appendChild(br2);
+                                        document.getElementById("divProyectos").appendChild(node1);
+                                        document.getElementById("divRecursos").appendChild(node2);
+                                    }
                                     function funcionOpciones() {
                                         
                                         var node1 = document.createElement("div");
@@ -497,28 +524,7 @@
                                         document.getElementById("divRiesgos").appendChild(node3);
                                         document.getElementById("divAceptar").appendChild(node4);
                                     }
-                                    function funcionEstadoPendiente() {
-                                        document.querySelector('lblEstado').innerText = '';
-                                        document.querySelector('lblEstado').innerText = 'Estado: Pendiente';
-
-                                        
-                                       
-                                    }
-                                    function funcionEstadoEnProceso() {
-                                        document.querySelector('lblEstado').innerText = '';
-                                        document.querySelector('lblEstado').innerText = 'Estado: En Proceso';
-
-                                    }
-                                    function funcionEstadoAceptada() {
-                                        document.querySelector('lblEstado').innerText = '';
-                                        document.querySelector('lblEstado').innerText = 'Estado: Aceptada';
-
-                                    }
-                                    function funcionEstadoRechazada() {
-                                        document.querySelector('lblEstado').innerText = '';
-                                        document.querySelector('lblEstado').innerText = 'Estado: Rechazada';
-
-                                    }
+                                
                                 </script>
 
                                 <%--<textarea id="txtTamañoYMagnitud" class="form-control" runat="server" rows="3"></textarea>--%>

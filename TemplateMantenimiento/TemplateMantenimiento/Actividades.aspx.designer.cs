@@ -382,31 +382,13 @@ namespace TemplateMantenimiento {
         protected global::System.Web.UI.WebControls.RadioButton rbNoDinero;
         
         /// <summary>
-        /// Control rbSiAfectacion.
+        /// Control txtProyecto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbSiAfectacion;
-        
-        /// <summary>
-        /// Control rbNoAfectacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbNoAfectacion;
-        
-        /// <summary>
-        /// Control txtProyectos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtProyectos;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtProyecto;
         
         /// <summary>
         /// Control rbSiSeguridad.
@@ -425,6 +407,15 @@ namespace TemplateMantenimiento {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton RbNoSeguridad;
+        
+        /// <summary>
+        /// Control divSeguridad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divSeguridad;
         
         /// <summary>
         /// Control txtSeguridad.
