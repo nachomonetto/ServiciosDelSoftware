@@ -53,10 +53,26 @@ namespace TemplateMantenimiento
        
             Session["fechaInicio"] = Convert.ToString(calendarFechaInicio.SelectedDate.ToShortDateString());
            
-            Session["fechaFin"] = Convert.ToString(calendarFechaFin.SelectedDate.ToShortDateString()); 
+            Session["fechaFin"] = Convert.ToString(calendarFechaFin.SelectedDate.ToShortDateString());
+            Session["problema"] = txtProblema.Value;
             Session["beneficios"] = txtBeneficios.Value;
 
             Response.Redirect("Entradas.aspx");
+        }
+
+        protected void calendarFechaInstalacion_SelectionChanged(object sender, EventArgs e)
+        {
+            txtEjecuciones.Focus();
+        }
+
+        protected void calendarFechaInicio_SelectionChanged(object sender, EventArgs e)
+        {
+            calendarFechaFin.Focus();
+        }
+
+        protected void calendarFechaFin_SelectionChanged(object sender, EventArgs e)
+        {
+            txtProblema.Focus();
         }
     }
 }

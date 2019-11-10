@@ -193,6 +193,15 @@ namespace TemplateMantenimiento {
         protected global::System.Web.UI.WebControls.Label lblFechaFin;
         
         /// <summary>
+        /// Control lblProblema.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblProblema;
+        
+        /// <summary>
         /// Control lblBeneficios.
         /// </summary>
         /// <remarks>
@@ -508,6 +517,15 @@ namespace TemplateMantenimiento {
         protected global::System.Web.UI.WebControls.RadioButton rbNoReplicacion;
         
         /// <summary>
+        /// Control txtDeclaracion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtDeclaracion;
+        
+        /// <summary>
         /// Control rbPrioridadAlta.
         /// </summary>
         /// <remarks>
@@ -587,5 +605,14 @@ namespace TemplateMantenimiento {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea Textarea2;
+        
+        /// <summary>
+        /// Control btnSalidas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSalidas;
     }
 }

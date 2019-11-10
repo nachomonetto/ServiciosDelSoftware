@@ -34,8 +34,25 @@ namespace TemplateMantenimiento
             Session["tipoMantenimiento"] = "cadena";
             Session["fechaInicio"] = "cadena";
             Session["fechaFin"] = "cadena";
+            Session["problema"] = "cadena";
             Session["beneficios"] = "cadena";
 
+            //Variables para las salidas
+
+            Session["declaracionProblema"] = "cadena";
+            Session["criticidad"] = "cadena";
+            
+            //La variable tipoMantenimiento ya está declarada más arriba
+            Session["prioridad"] = "cadena";
+            Session["estrategiaPrueba"] = "cadena";
+            Session["versionSoftware"] = "cadena";
+            Session["resultadosPruebas"] = "cadena";
+            Session["exitoReplicacion"] = "cadena";
+            Session["personalResponsable"] = "cadena";
+            Session["estimacionPesos"] = "cadena";
+            Session["estimacionDias"] = "cadena";
+            Session["opcionRecomendada"] = "cadena";
+            Session["estadoSolicitud"] = "cadena";
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

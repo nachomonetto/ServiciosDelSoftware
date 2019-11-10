@@ -30,6 +30,7 @@ namespace TemplateMantenimiento
             lblTipoMantenimiento.Text = (string)Session["tipoMantenimiento"];
             lblFechaInicio.Text = (string)Session["fechaInicio"];
             lblFechaFin.Text = (string)Session["fechaFin"];
+            lblProblema.Text=(string)Session["problema"];
             lblBeneficios.Text = (string)Session["beneficios"];
 
         }
@@ -68,6 +69,59 @@ namespace TemplateMantenimiento
         {
             divSeguridad.Visible = false;
             txtBeneficiosALargoPlazo.Focus();
+        }
+
+        protected void btnSalidas_Click(object sender, EventArgs e)
+        {
+            Session["declaracionProblema"] = txtDeclaracion.Value;
+            if (rbCritica.Checked==true)
+            {
+                Session["criticidad"] = "Crítica";
+            }
+            if (rbAlta.Checked==true)
+            {
+                Session["criticidad"] = "Media";
+            }
+            if (rbAlta.Checked == true)
+            {
+                Session["criticidad"] = "Baja";
+            }
+
+            //La variable tipoMantenimiento ya está seteada
+
+            if (rbPrioridadAlta.Checked==true)
+            {
+                Session["prioridad"] = "Alta";
+            }
+            if (rbPrioridadAlta.Checked == true)
+            {
+                Session["prioridad"] = "Media";
+            }
+            if (rbPrioridadAlta.Checked == true)
+            {
+                Session["prioridad"] = "Baja";
+            }
+
+            Session["estrategiaPrueba"] = txtEstrategia.Value;
+            Session["versionSoftware"] = txtVersion.Text;
+            Session["resultadosPruebas"] = txtResultados.Value;
+
+            if (rbSiReplicacion.Checked==true)
+            {
+                Session["exitoReplicacion"] = "Si";
+            }
+            if (rbNoReplicacion.Checked == true)
+            {
+                Session["exitoReplicacion"] = "No";
+            }
+
+            Session["personalResponsable"] = txtNombreResponsable.Value + ' ' + txtApellidoResponsable.Value;
+            Session["estimacionPesos"] = txtCostoEnDinero.Value;
+            Session["estimacionDias"] = txtDiasModificacion.Value;
+            Session["opcionRecomendada"] = txtOpcion.Value;
+            Session["estadoSolicitud"] = "Aprobada";
+
+            Response.Redirect("Salidas.aspx");
         }
     }
 }

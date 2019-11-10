@@ -13,6 +13,7 @@
     <script src="scripts/jquery-1.9.1.min.js"></script>
   <%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>--%>
     <script src="scripts/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <style>
     /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
     .row.content {height: 1500px}
@@ -42,6 +43,16 @@
         margin-left: 80px;
         margin-right:80px;
     }
+     .loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('loadingGif.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;
+}
   </style>
      <script type="text/javascript">
     // Solo permite ingresar numeros.
@@ -50,8 +61,13 @@
 	    return (key >= 48 && key <= 57)
     }
     </script>
+    <script type="text/javascript">
+$(window).load(function() {
+    $(".loader").fadeOut("slow");
+});
+</script>
 </head>
-<body class="margenes">
+<body class="margenes"><div class="loader"></div>
     <form id="form1" runat="server">
     <div>
         <div class="container-fluid">
@@ -108,7 +124,7 @@
         <div class="well">
             <div class="form-group">
                 <label for="usr">Fecha de instalación del programa:</label>
-                <asp:Calendar ID="calendarFechaInstalacion" runat="server" ></asp:Calendar>
+                <asp:Calendar ID="calendarFechaInstalacion" runat="server" OnSelectionChanged="calendarFechaInstalacion_SelectionChanged" ></asp:Calendar>
             </div>
         </div>
       
@@ -200,13 +216,20 @@
                 <br />
                 <br />
                 Fecha Inicio
-                <asp:Calendar ID="calendarFechaInicio" runat="server"></asp:Calendar>
+                <asp:Calendar ID="calendarFechaInicio" runat="server" OnSelectionChanged="calendarFechaInicio_SelectionChanged"></asp:Calendar>
                 <br />
                 Fecha Fin
-                <asp:Calendar ID="calendarFechaFin" runat="server"></asp:Calendar>
+                <asp:Calendar ID="calendarFechaFin" runat="server" OnSelectionChanged="calendarFechaFin_SelectionChanged"></asp:Calendar>
             </div>
         </div>
         <hr />
+        <div class="well">
+          <div class="form-group">
+              <label for="usr">Describa brevemente en que consiste el mantenimiento a realizar:</label>
+              <textarea id="txtProblema" class="form-control" runat="server" rows="3" required></textarea>
+          </div>
+      </div>
+      <hr />
       <div class="well">
           <div class="form-group">
               <label for="usr">Beneficios netos que sopone el cambio:</label>
@@ -214,6 +237,7 @@
           </div>
       </div>
       <br />
+
 
       <asp:Button ID="btnEnviar" runat="server" Text="Enviar" class="btn btn-success btn-lg btn-block" OnClick="btnEnviar_Click" />
     </div>

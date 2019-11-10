@@ -14,6 +14,7 @@
     <%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>--%>
     <script src="scripts/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <style>
         /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
         .row.content {
@@ -49,6 +50,16 @@
             margin-left: 80px;
             margin-right: 80px;
         }
+        .loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('loadingGif.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;
+}
     </style>
 
     <script type="text/javascript">
@@ -61,9 +72,14 @@
        
 
     </script>
+    <script type="text/javascript">
+$(window).load(function() {
+    $(".loader").fadeOut("slow");
+});
+</script>
 
 </head>
-<body>
+<body><div class="loader"></div>
     <form id="form1" runat="server">
         <div>
             <div class="container-fluid">
@@ -142,6 +158,8 @@
                             <asp:Label ID="lblFechaInicio" runat="server" Text="Label"></asp:Label><br />
                             Fecha de fin del mantenimiento:
                             <asp:Label ID="lblFechaFin" runat="server" Text="Label"></asp:Label><br />
+                            Descripción del mantenimiento:
+                            <asp:Label ID="lblProblema" runat="server" Text="Label"></asp:Label><br />
                             Beneficios netos que supone el cambio:
                             <asp:Label ID="lblBeneficios" runat="server" Text="Label"></asp:Label>
 
@@ -342,6 +360,8 @@
 
                                     <asp:RadioButton ID="rbNoReplicacion" type="radio" Text="No" GroupName="Replicacion" runat="server" />
                                 </label>
+                                <h4><strong>Declaración del problema o nuevo requerimiento: </strong></h4>
+                                <textarea class="form-control" id="txtDeclaracion" runat="server" rows="3"></textarea>
                             </div>
                         </div>
                         <hr />
@@ -617,7 +637,7 @@
                             <select class="form-control" id="sel1">
                                 <option>Pendiente</option>
                                 <option selected>En proceso</option>
-                                <option>Aceptada</option>
+                                <option>Aprobada</option>
                                 <option>Rechazada</option>
                             </select>
                             </div>
@@ -627,7 +647,9 @@
                             <h4><strong>Una vez aprobada, actualizar también los requerimientos (en caso de que la petición sea una mejora)</strong></h4>
                             <button class="w3-button w3-block w3-black">Actualizar requerimientos</button>
                         </div>
-                        
+                        <br />
+                        <asp:Button runat="server" Text="Ver salidas >" class="w3-button w3-block w3-green" id="btnSalidas" OnClick="btnSalidas_Click" />
+
 
 
                 </div>
