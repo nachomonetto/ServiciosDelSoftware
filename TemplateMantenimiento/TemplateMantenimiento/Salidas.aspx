@@ -131,7 +131,7 @@ $(window).load(function() {
                                 <h4><strong>Opción recomendada: </strong>
                                     <asp:Label ID="lblOpcionRecomendada" runat="server" Text="Label"></asp:Label></h4>
                                 <hr />
-                                <h4><strong>Estado de la solicitud de cambio: <asp:Label ID="lblEstadoSolicitud" runat="server" Text="Label"></asp:Label></strong></h4>
+                                <h4><strong>Estado de la solicitud de cambio: </strong><asp:Label ID="lblEstadoSolicitud" runat="server" Text="Label"></asp:Label></h4>
                                 <button type="button" class="btn btn-primary btn-lg btn-block">Ver documento de respuesta</button>
                                 <hr />
                                 <button type="button" class="btn btn-primary btn-lg btn-block">Ver documentación actualizada</button>

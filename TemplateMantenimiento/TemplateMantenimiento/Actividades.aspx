@@ -285,7 +285,7 @@ $(window).load(function() {
 
                                     <asp:RadioButton ID="rbNoAfectacion" type="radio" Text="No" GroupName="Afectacion" runat="server" AutoPostBack="true" OnCheckedChanged="rbNoAfectacion_CheckedChanged" />
                                 </label>--%>
-                                <h4><strong>Detalle el nombre de los proyectos afectados y si se les quitarían recursos para realizar el cambio</strong></h4>
+                                <h4><strong>Detalle el nombre de los proyectos afectados y si se les quitarían recursos para realizar el cambio:</strong></h4>
                                 <div id="divAfectacion">
                                     <div class="row">
                                         <div class="col-sm-6" id="divProyectos">
@@ -311,13 +311,13 @@ $(window).load(function() {
                                     <asp:RadioButton ID="RbNoSeguridad" AutoPostBack="true" type="radio" Text="No" GroupName="Seguridad" runat="server" OnCheckedChanged="RbNoSeguridad_CheckedChanged" />
                                 </label>
                                 <div id="divSeguridad" visible="false" runat="server">
-                                    <h4><strong>Detalle implicaciones en la seguridad física y lógica</strong></h4>
+                                    <h4><strong>Detalle implicaciones en la seguridad física y lógica:</strong></h4>
                                 <div class="form-group">
                                     <textarea required class="form-control" id="txtSeguridad" runat="server" rows="3"></textarea>
                                 </div>
                                 </div>
                                 
-                                <h4><strong>Detalle el beneficio que genera realizar la modificación. No siempre se tiene en cuenta la rentabilidad, el no corregir errores debido a altos costes puede afectar nuestra imagen</strong></h4>
+                                <h4><strong>Detalle el beneficio que genera realizar la modificación. No siempre se tiene en cuenta la rentabilidad, el no corregir errores debido a altos costes puede afectar nuestra imagen:</strong></h4>
                                 <textarea required class="form-control" id="txtBeneficiosALargoPlazo" runat="server" rows="3"></textarea>
                                 <h4><strong>Seleccione el nivel de Testing requerido:</strong></h4>
                                 <label class="radio-inline">
@@ -344,12 +344,12 @@ $(window).load(function() {
                             <div class="well">
                                 <h4><strong>Describa la estrategia de prueba a seguir para verificar el problema: </strong></h4>
                                 <textarea required class="form-control" id="txtEstrategia" runat="server" rows="3"></textarea>
-                                <h4><strong>Versión de software afectada de Gestión de Configuración</strong></h4>
+                                <h4><strong>Versión de software afectada de Gestión de Configuración:</strong></h4>
                                 <asp:TextBox ID="txtVersion" CssClass="form-control" runat="server"></asp:TextBox><br />
                                 <button type="button" class="btn btn-primary btn-lg btn-block">Instalar versión</button>
                                 <button type="button" class="btn btn-info btn-lg btn-block">Ver copia de los datos afectados</button>
                                 <button type="button" class="btn btn-success btn-lg btn-block">Ejecutar</button>
-                                <h4><strong>Detalle los resultados observados de las pruebas</strong></h4>
+                                <h4><strong>Detalle los resultados observados de las pruebas:</strong></h4>
                                 <textarea required class="form-control" id="txtResultados" runat="server" rows="3"></textarea>
                                 <h4><strong>¿Se pudo replicar el problema con éxito?</strong></h4>
                                 <label class="radio-inline">
@@ -381,7 +381,7 @@ $(window).load(function() {
 
                                     <asp:RadioButton ID="rbPrioridadBaja" type="radio" Text="Baja" GroupName="Prioridad" runat="server" />
                                 </label>
-                                <h4><strong>Defina los requerimientos más sólidos de la modificación y los riesgos asociados a cada uno de ellos si no se llegaran a realizar.</strong></h4>
+                                <h4><strong>Defina los requerimientos más sólidos de la modificación y los riesgos asociados a cada uno de ellos si no se llegaran a realizar:</strong></h4>
                                 <textarea required id="txtReqSolidos" class="form-control" runat="server" rows="3"></textarea>
                                 <h4><strong>Estimar tamaño de la modificación prevista. Para ello, agregue los Casos de Uso afectados por la modificación y la complejidad de cada uno en base a la siguiente tabla:</strong></h4>
                                 <table class="table table-striped">
@@ -548,7 +548,7 @@ $(window).load(function() {
                                 </script>
 
                                 <%--<textarea id="txtTamañoYMagnitud" class="form-control" runat="server" rows="3"></textarea>--%>
-                                <h4><strong>Desarrolle las opciones para implementar la modificación, definiendo el impacto en Hw y Usuarios, y los riesgos asociados a las opciones</strong></h4>
+                                <h4><strong>Desarrolle las opciones para implementar la modificación, definiendo el impacto en Hw y Usuarios, y los riesgos asociados a las opciones:</strong></h4>
                                 <div class="well">
                                 <div class="row">
                                     <div class="col-sm-3">
@@ -597,29 +597,29 @@ $(window).load(function() {
                         <hr />
                         <div class="form-group">
                             <div class="well">
-                                <h4><strong>Verifique, a través del siguiente botón, que los análisis aporpiados y la documentación del proyecto están actualizados:</strong></h4>
+                                <h4><strong>Verifique que los análisis apropiados y la documentación del proyecto están actualizados:</strong></h4>
                                 <button type="button" class="btn btn-success btn-lg btn-block">Verificar</button>
-                                <h4>¿No existe documentación al respecto? Desarrolle la documentación correspondiente</h4>
+                                <h4>¿No existe documentación al respecto? Desarrolle la documentación correspondiente:</h4>
                                 <button type="button" class="btn btn-success btn-lg btn-block">Generar documentación</button>
 
                             </div>
                             <div class="well">
-                                <h4><strong>Revise la estrategia de pruebas propuesta y planificación para intentar obtener una exactitud mayor.</strong></h4>
+                                <h4><strong>Revise la estrategia de pruebas propuesta y planificación para intentar obtener una exactitud mayor:</strong></h4>
                                 <button type="button" class="btn btn-primary btn-lg btn-block">Revisar estrategia de pruebas</button>
                                 <button type="button" class="btn btn-primary btn-lg btn-block">Revisar calendario</button>
 
                             </div>
                             <div class="well">
-                                <h4><strong>Revise la estimación de recursos para una mayor precisión</strong></h4>
+                                <h4><strong>Revise la estimación de recursos para una mayor precisión:</strong></h4>
                                 <button type="button" class="btn btn-primary btn-lg btn-block">Revisar estimación de recursos</button>
 
                             </div>
                             <div class="well">
-                                <h4><strong>Actualice el estado de la Base de Datos</strong></h4>
+                                <h4><strong>Actualice el estado de la Base de Datos:</strong></h4>
                                 <button type="button" class="btn btn-primary btn-lg btn-block">Actualizar BD</button>
                             </div>
                             <div class="well">
-                                <h4><strong>Incluir una Recomendación para indicar si la MR/PR debería aprobarse o no. Al documentar el informe se deben dar a los directores de proyecto la recomendación personal sobre la MR/PR, lo que les permitirá tener una segunda opinión a la hora de decidir</strong></h4>
+                                <h4><strong>Incluir una recomendación para indicar si la MR/PR debería aprobarse o no. Al documentar el informe se deben dar a los directores de proyecto la recomendación personal sobre la MR/PR, lo que les permitirá tener una segunda opinión a la hora de decidir:</strong></h4>
                                 <textarea required id="Textarea2" class="form-control" runat="server"></textarea>
                             </div>
 
@@ -627,11 +627,11 @@ $(window).load(function() {
                         <h3>Aprobación</h3>
                         <hr />
                         <div class="well">
-                            <h4><strong>Presentar los resultados del análisis para su aprobación por parte de los grupos de administración</strong></h4>
+                            <h4><strong>Presentar los resultados del análisis para su aprobación por parte de los grupos de administración:</strong></h4>
                         <button class="w3-button w3-block w3-teal">Enviar resultados</button>
                         </div>
                         <div class="well">
-                            <h4><strong>Una vez aprobada la modificación actualizar el estado de la petición de modificación</strong></h4>
+                            <h4><strong>Una vez aprobada la modificación, actualizar el estado de la petición de modificación:</strong></h4>
                             <div class="form-group">
                            <label for="sel1">Actualizar: </label>
                             <select class="form-control" id="sel1">
