@@ -76,7 +76,7 @@ $(window).load(function() {
                             <div class="well">
                                 <h4><strong>Análisis de Impacto</strong></h4>
                                 <br />
-                                <div class="alert alert-success">
+                                <div class="alert alert-success" style="font-size: 18px">
                                     <strong>Declaración del problema o nuevo requerimiento: </strong>
                                     <asp:Label ID="lblDeclaracion" runat="server" Text="Label"></asp:Label>
                                     <br />

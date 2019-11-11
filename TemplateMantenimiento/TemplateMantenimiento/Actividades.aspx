@@ -198,7 +198,7 @@ $(window).load(function() {
                                     <div class="col-sm-4">
                                         <div class="well">
                                             <h4>Ingrese cuantos días llevará concretar la modificación:</h4>
-                                            <input type="text" runat="server" class="form-control" id="txtDiasModificacion" onkeypress="return soloNumeros(event)">
+                                            <input required type="text" runat="server" class="form-control" id="txtDiasModificacion" onkeypress="return soloNumeros(event)">
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
@@ -206,7 +206,7 @@ $(window).load(function() {
                                             <h4>Ingrese el coste en dinero aproximado:</h4>
                                             <div class="input-group">
                                                 <span class="input-group-addon">$</span>
-                                                <input id="txtCostoEnDinero" runat="server" type="text" class="form-control" name="msg" placeholder="En pesos..." onkeypress="return soloNumeros(event)">
+                                                <input required id="txtCostoEnDinero" runat="server" type="text" class="form-control" name="msg" placeholder="En pesos..." onkeypress="return soloNumeros(event)">
                                             </div>
                                         </div>
                                     </div>
@@ -248,23 +248,23 @@ $(window).load(function() {
                                 <h4><strong>Complete los datos de contacto del responsable:</strong></h4>
                                 <div class="input-group">
                                     <span class="input-group-addon">Nombre</span>
-                                    <input id="txtNombreResponsable" runat="server" type="text" class="form-control" name="msg">
+                                    <input required id="txtNombreResponsable" runat="server" type="text" class="form-control" name="msg">
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon">Apellido</span>
-                                    <input id="txtApellidoResponsable" runat="server" type="text" class="form-control" name="msg">
+                                    <input required id="txtApellidoResponsable" runat="server" type="text" class="form-control" name="msg">
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon">Área de la Empresa</span>
-                                    <input id="txtArea" runat="server" type="text" class="form-control" name="msg">
+                                    <input required id="txtArea" runat="server" type="text" class="form-control" name="msg">
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon">E-Mail</span>
-                                    <input id="txtMail" runat="server" type="text" class="form-control" name="msg">
+                                    <input required id="txtMail" runat="server" type="text" class="form-control" name="msg">
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon">Celular</span>
-                                    <input id="txtCelular" runat="server" type="text" class="form-control" name="msg">
+                                    <input required id="txtCelular" runat="server" type="text" class="form-control" name="msg">
                                 </div>
                                     </div>
                                 <h4><strong>¿Tenemos el dinero para llevar a cabo el cambio?</strong></h4>
@@ -313,12 +313,12 @@ $(window).load(function() {
                                 <div id="divSeguridad" visible="false" runat="server">
                                     <h4><strong>Detalle implicaciones en la seguridad física y lógica</strong></h4>
                                 <div class="form-group">
-                                    <textarea class="form-control" id="txtSeguridad" runat="server" rows="3"></textarea>
+                                    <textarea required class="form-control" id="txtSeguridad" runat="server" rows="3"></textarea>
                                 </div>
                                 </div>
                                 
                                 <h4><strong>Detalle el beneficio que genera realizar la modificación. No siempre se tiene en cuenta la rentabilidad, el no corregir errores debido a altos costes puede afectar nuestra imagen</strong></h4>
-                                <textarea class="form-control" id="txtBeneficiosALargoPlazo" runat="server" rows="3"></textarea>
+                                <textarea required class="form-control" id="txtBeneficiosALargoPlazo" runat="server" rows="3"></textarea>
                                 <h4><strong>Seleccione el nivel de Testing requerido:</strong></h4>
                                 <label class="radio-inline">
 
@@ -343,14 +343,14 @@ $(window).load(function() {
                         <div class="form-group">
                             <div class="well">
                                 <h4><strong>Describa la estrategia de prueba a seguir para verificar el problema: </strong></h4>
-                                <textarea class="form-control" id="txtEstrategia" runat="server" rows="3"></textarea>
+                                <textarea required class="form-control" id="txtEstrategia" runat="server" rows="3"></textarea>
                                 <h4><strong>Versión de software afectada de Gestión de Configuración</strong></h4>
                                 <asp:TextBox ID="txtVersion" CssClass="form-control" runat="server"></asp:TextBox><br />
                                 <button type="button" class="btn btn-primary btn-lg btn-block">Instalar versión</button>
                                 <button type="button" class="btn btn-info btn-lg btn-block">Ver copia de los datos afectados</button>
                                 <button type="button" class="btn btn-success btn-lg btn-block">Ejecutar</button>
                                 <h4><strong>Detalle los resultados observados de las pruebas</strong></h4>
-                                <textarea class="form-control" id="txtResultados" runat="server" rows="3"></textarea>
+                                <textarea required class="form-control" id="txtResultados" runat="server" rows="3"></textarea>
                                 <h4><strong>¿Se pudo replicar el problema con éxito?</strong></h4>
                                 <label class="radio-inline">
 
@@ -361,7 +361,7 @@ $(window).load(function() {
                                     <asp:RadioButton ID="rbNoReplicacion" type="radio" Text="No" GroupName="Replicacion" runat="server" />
                                 </label>
                                 <h4><strong>Declaración del problema o nuevo requerimiento: </strong></h4>
-                                <textarea class="form-control" id="txtDeclaracion" runat="server" rows="3"></textarea>
+                                <textarea required class="form-control" id="txtDeclaracion" runat="server" rows="3"></textarea>
                             </div>
                         </div>
                         <hr />
@@ -382,7 +382,7 @@ $(window).load(function() {
                                     <asp:RadioButton ID="rbPrioridadBaja" type="radio" Text="Baja" GroupName="Prioridad" runat="server" />
                                 </label>
                                 <h4><strong>Defina los requerimientos más sólidos de la modificación y los riesgos asociados a cada uno de ellos si no se llegaran a realizar.</strong></h4>
-                                <textarea id="txtReqSolidos" class="form-control" runat="server" rows="3"></textarea>
+                                <textarea required id="txtReqSolidos" class="form-control" runat="server" rows="3"></textarea>
                                 <h4><strong>Estimar tamaño de la modificación prevista. Para ello, agregue los Casos de Uso afectados por la modificación y la complejidad de cada uno en base a la siguiente tabla:</strong></h4>
                                 <table class="table table-striped">
                                 <thead>
@@ -420,10 +420,10 @@ $(window).load(function() {
                                 <div class="row">
                                     <div class="well">
                                         <div class="col-sm-6" id="divCU">
-                                        <input type="text" class="form-control" id="txtCU" placeholder="Nombre del CU..."><br />
+                                        <input required type="text" class="form-control" id="txtCU" placeholder="Nombre del CU..."><br />
                                     </div>
                                     <div class="col-sm-6" id="divComplejidad">
-                                        <input type="text" class="form-control" id="txtComplejidad" placeholder="Complejidad..."><br />
+                                        <input required type="text" class="form-control" id="txtComplejidad" placeholder="Complejidad..."><br />
                                     </div>
                                         <button type="button" onclick="myFunction()" class="btn btn-primary btn-lg btn-block">Agregar CU</button>
                                 </div>
@@ -554,21 +554,21 @@ $(window).load(function() {
                                     <div class="col-sm-3">
                                         <div class="form-group" id="divOpcion">
                                         <label for="usr">Opción</label>
-                                        <textarea id="txtOpcion" class="form-control" runat="server"></textarea>
+                                        <textarea required id="txtOpcion" class="form-control" runat="server"></textarea>
                                         <br />
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
                                         <div class="form-group" id="divImpacto">
                                         <label for="usr">Impacto en Hw y Usuarios</label>
-                                        <textarea id="Textarea1" class="form-control" runat="server"></textarea>
+                                        <textarea required id="Textarea1" class="form-control" runat="server"></textarea>
                                         <br />
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
                                         <div class="form-group" id="divRiesgos">
                                         <label for="usr">Riesgos</label>
-                                        <textarea id="Textarea6" class="form-control" runat="server"></textarea>
+                                        <textarea required id="Textarea6" class="form-control" runat="server"></textarea>
                                         <br />
                                         </div>
                                     </div>
@@ -590,7 +590,7 @@ $(window).load(function() {
                                 </div>
                    
                                 <h4><strong>Desarrolle un plan para implementar la modificación:</strong></h4>
-                                <textarea id="Textarea9" class="form-control" runat="server"></textarea>
+                                <textarea required id="Textarea9" class="form-control" runat="server"></textarea>
                         </div>
                     </div>
                         <h3>Documentación</h3>
@@ -620,7 +620,7 @@ $(window).load(function() {
                             </div>
                             <div class="well">
                                 <h4><strong>Incluir una Recomendación para indicar si la MR/PR debería aprobarse o no. Al documentar el informe se deben dar a los directores de proyecto la recomendación personal sobre la MR/PR, lo que les permitirá tener una segunda opinión a la hora de decidir</strong></h4>
-                                <textarea id="Textarea2" class="form-control" runat="server"></textarea>
+                                <textarea required id="Textarea2" class="form-control" runat="server"></textarea>
                             </div>
 
                         </div>
